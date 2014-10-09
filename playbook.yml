@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  roles:
+    - geerlingguy.apache
+    - geerlingguy.mysql
+    - geerlingguy.php
+    - geerlingguy.php-mysql
+    # - geerlingguy.varnish
+    # - geerlingguy.memcached
