@@ -2,7 +2,7 @@
 
 I use this VM to test things in an environment close to that of Acquia's Cloud servers, following the guide at [Acquia Cloud technology platform and supported software](https://docs.acquia.com/cloud/arch/tech-platform).
 
-Includes (or will soon include):
+The following is included inside this VM:
 
   - Apache 2.2.22
   - MySQL 5.5.x
@@ -20,7 +20,7 @@ Includes (or will soon include):
     - `$ brew install ansible`
   2. (From the same directory as this README file) run `$ vagrant up`
 
-*This assumes you have [Homebrew](http://brew.sh/) installed and have `cask` installed (`brew tap caskroom/cask && brew install brew-cask` to install).*
+*This assumes you have [Homebrew](http://brew.sh/) installed and have `cask` installed (`brew tap caskroom/cask && brew install brew-cask` to install). On a Linux or Windows computer, you will need to install VirtualBox, Vagrant and Ansible according to the guides linked in step 1. This VM is not currently supported on Windows, but if you'd like support, please file an issue.*
 
 **Note**: Do NOT use the included Ansible playbook for production infrastructure unless you understand the security implications and have configured secure passwords, a firewall, etc. This VM and playbook are meant to help you replicate the Aquia Cloud environment locally, not to replicate the Acquia Cloud on other public infrastructure. You have been warned!
 
