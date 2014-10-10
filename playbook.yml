@@ -2,9 +2,14 @@
 - hosts: all
 
   roles:
+    - geerlingguy.git
     - geerlingguy.apache
     - geerlingguy.mysql
+    - geerlingguy.varnish
     - geerlingguy.php
     - geerlingguy.php-mysql
-    # - geerlingguy.varnish
+    # - geerlingguy.php-xdebug
+    # - geerlingguy.phpmyadmin
+    - geerlingguy.composer
+    - geerlingguy.drush
     # - geerlingguy.memcached

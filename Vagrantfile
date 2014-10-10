@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu1204"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210-nocm.box"
 
-  config.vm.synced_folder "/Users/jgeerling/Sites/drupal", "/drupal",
+  config.vm.synced_folder "~/Sites/drupal", "/drupal",
     type: "rsync",
     rsync__auto: "true",
     rsync__exclude: ".git/",
