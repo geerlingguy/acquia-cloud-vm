@@ -5,6 +5,7 @@
     - config.yml
 
   roles:
+    - geerlingguy.firewall
     - geerlingguy.git
     - geerlingguy.apache
     - geerlingguy.mysql

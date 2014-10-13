@@ -18,6 +18,7 @@ The following is included inside this VM:
   1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads), [Vagrant](https://www.vagrantup.com/downloads.html), and [Ansible](http://docs.ansible.com/intro_installation.html):
     - `$ brew cask install virtualbox vagrant`
     - `$ brew install ansible`
+  2. Install all the roles listed in `playbook.yml` with the command `$ ansible-galaxy install [role name]`
   2. Copy `example.config.yml` to `config.yml` (your local `config.yml` will be ignored by Git and you can modify it to suit your needs).
   3. (From the same directory as this README file) run `$ vagrant up`
 
