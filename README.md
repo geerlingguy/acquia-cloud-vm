@@ -39,6 +39,23 @@ Things like hosts file configuration (changing your local system's hosts file to
 
 This VM uses Vagrant's built-in rsync-based folder syncing (which is currently one-way), and pushes your files into the VM every time you do a `vagrant up` or `vagrant reload`. To initiate a one-time sync, use `vagrant rsync`, or to continuously monitor your local files for changes (and automatically sync them to the VM), use `vagrant rsync-auto`.
 
+## Connecting to MySQL
+
+By default, this VM is set up so you can manage mysql databases on your own. The default root MySQL user credentials are `root` for username+password, but you could change the password via `config.yml`. I use the MySQL GUI [Sequel Pro](http://www.sequelpro.com/) (Mac-only) to connect and manage databases, then Drush to sync databases (sometimes I'll just do a dump and import, but Drush is usually quicker, and is easier to do over and over again when you need it).
+
+To connect using Sequel Pro (or a similar client):
+
+  1. Use the SSH connection type.
+  2. Set the following options:
+    - MySQL Host: `127.0.0.1`
+    - Username: `root`
+    - Password: `root` (or whatever password you chose in `config.yml`)
+    - SSH Host: `192.168.4.40` (or whatever IP you chose in `config.yml`)
+    - SSH User: `vagrant`
+    - SSH Key: (browse to your `~/.vagrant.d/` folder and choose `insecure_private_key`)
+
+You should be able to connect as the root user and add, manage, and remove databases and users.
+
 ## TODO
 
   - Add Solr (`geerlingguy.tomcat6` + `geerlingguy.solr`)
