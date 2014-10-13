@@ -1,6 +1,9 @@
 ---
 - hosts: all
 
+  vars_files:
+    - config.yml
+
   roles:
     - geerlingguy.git
     - geerlingguy.apache
