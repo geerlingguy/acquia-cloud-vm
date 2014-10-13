@@ -8,6 +8,7 @@ The following is included inside this VM:
   - MySQL 5.5.x
   - PHP 5.3.x (5.5.x configurable)
   - Varnish 3.x
+  - Memcached 1.4.x (with PHP support)
   - Composer
   - Drush 6.x
   - Git
@@ -30,11 +31,14 @@ The following is included inside this VM:
 
 Please see the available VM customization options inside `config.yml`. You can easily define folder mappings inside this folder, as well as change some settings like RAM/CPU allocation and the hostname and IP address of the VM.
 
+## Syncing Files
+
+This VM uses Vagrant's built-in rsync-based folder syncing (which is currently one-way), and pushes your files into the VM every time you do a `vagrant up` or `vagrant reload`. To initiate a one-time sync, use `vagrant rsync`, or to continuously monitor your local files for changes (and automatically sync them to the VM), use `vagrant rsync-auto`.
+
 ## TODO
 
   - Add Xdebug (`geerlingguy.xdebug`)
   - Add PHPMyAdmin (`geerlingguy.phpmyadmin`)
-  - Add memcached (`geerlingguy.memcached`)
   - Add Solr (`geerlingguy.tomcat6` + `geerlingguy.solr`)
   - Add other utilities and helpful tooling
 
