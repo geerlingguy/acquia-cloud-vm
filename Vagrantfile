@@ -1,19 +1,24 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'yaml'
+vconfig = YAML::load_file("./config.yml")
+
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "local.cloudvm.com"
-  config.vm.network :private_network, ip: "192.168.4.40"
+  config.vm.hostname = vconfig['vagrant_hostname']
+  config.vm.network :private_network, ip: vconfig['vagrant_ip']
 
   config.vm.box = "ubuntu1204"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210-nocm.box"
 
-  config.vm.synced_folder "~/Sites/drupal", "/drupal",
-    type: "rsync",
-    rsync__auto: "true",
-    rsync__exclude: ".git/",
-    rsync__args: ["--verbose", "--archive", "--delete", "-z", "--chmod=ugo=rwX"],
-    id: "drupal"
+  for synced_folder in vconfig['vagrant_synced_folders'];
+    config.vm.synced_folder synced_folder['local_path'], synced_folder['destination'],
+      type: "rsync",
+      rsync__auto: "true",
+      rsync__exclude: ".git/",
+      rsync__args: ["--verbose", "--archive", "--delete", "-z", "--chmod=ugo=rwX"],
+      id: synced_folder['id']
+  end
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "playbook.yml"
@@ -24,8 +29,8 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--name", "local.cloudvm.com"]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    v.customize ["modifyvm", :id, "--memory", 1024]
-    v.customize ["modifyvm", :id, "--cpus", 2]
+    v.customize ["modifyvm", :id, "--memory", vconfig['vagrant_memory']]
+    v.customize ["modifyvm", :id, "--cpus", vconfig['vagrant_cpus']]
     v.customize ["modifyvm", :id, "--ioapic", "on"]
   end
 

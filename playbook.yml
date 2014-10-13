@@ -6,10 +6,11 @@
     - geerlingguy.apache
     - geerlingguy.mysql
     - geerlingguy.varnish
+    - geerlingguy.memcached
     - geerlingguy.php
     - geerlingguy.php-mysql
+    - geerlingguy.php-memcached
     # - geerlingguy.php-xdebug
     # - geerlingguy.phpmyadmin
     - geerlingguy.composer
     - geerlingguy.drush
-    # - geerlingguy.memcached
