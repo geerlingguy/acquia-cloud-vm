@@ -10,9 +10,10 @@ The following is included inside this VM:
   - PHP 5.3.x (5.5.x configurable)
   - Varnish 3.x
   - Memcached 1.4.x
+  - XDebug
   - Composer
   - Drush 6.x
-  - Git
+  - Git 1.9.x
   - (More to come...).
 
 ## Usage
@@ -40,9 +41,9 @@ This VM uses Vagrant's built-in rsync-based folder syncing (which is currently o
 
 ## TODO
 
-  - Add Xdebug (`geerlingguy.xdebug`)
-  - Add PHPMyAdmin (`geerlingguy.phpmyadmin`)
   - Add Solr (`geerlingguy.tomcat6` + `geerlingguy.solr`)
+  - Add XHProf (`geerlingguy.xhprof`)
+  - Add PHPMyAdmin (`geerlingguy.phpmyadmin`)
   - Add other utilities and helpful tooling
 
 ## Author Information
