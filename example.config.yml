@@ -24,3 +24,5 @@ apache_vhosts:
     servername: "local.cloudvm.com",
     documentroot: "/drupal"
   }
+
+mysql_root_password: root
