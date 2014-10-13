@@ -4,11 +4,12 @@ I use this VM to test things in an environment close to that of Acquia's Cloud s
 
 The following is included inside this VM:
 
+  - Ubuntu 12.04 (Precise)
   - Apache 2.2.22
   - MySQL 5.5.x
   - PHP 5.3.x (5.5.x configurable)
   - Varnish 3.x
-  - Memcached 1.4.x (with PHP support)
+  - Memcached 1.4.x
   - Composer
   - Drush 6.x
   - Git
@@ -29,7 +30,9 @@ The following is included inside this VM:
 
 ## Customization
 
-Please see the available VM customization options inside `config.yml`. You can easily define folder mappings inside this folder, as well as change some settings like RAM/CPU allocation and the hostname and IP address of the VM.
+Please see the available VM customization options inside `config.yml`. You can easily define folder mappings inside this folder, as well as change settings like RAM/CPU allocation, the hostname and IP address of the VM, and even things like Apache and Varnish ports.
+
+Things like hosts file configuration (changing your local system's hosts file to point to this VM's IP address for development hostnames) are left to you to manage. My goal is to make this VM configuration extremely flexible and lightweight.
 
 ## Syncing Files
 
