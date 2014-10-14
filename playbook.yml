@@ -18,3 +18,28 @@
     # - geerlingguy.phpmyadmin
     - geerlingguy.composer
     - geerlingguy.drush
+
+  tasks:
+    - name: Ensure networking tools are installed.
+      apt: "name={{ item }} state=installed"
+      with_items:
+        - curl
+        - wget
+        - iftop
+        - traceroute
+        - tcpdump
+
+    - name: Ensure performance analysis tools are installed.
+      apt: "name={{ item }} state=installed"
+      with_items:
+        - htop
+        - iotop
+        - sysstat # includes netstat
+        - lsof
+        - strace
+
+    - name: Ensure development tools are installed.
+      apt: "name={{ item }} state=installed"
+      with_items:
+        - vim
+        - emacs
