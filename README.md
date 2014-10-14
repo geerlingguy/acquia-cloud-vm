@@ -8,6 +8,7 @@ The following is included inside this VM:
   - Apache 2.2.22
   - MySQL 5.5.x
   - PHP 5.3.x (5.5.x configurable)
+  - PHPMyAdmin 3.4.x
   - Varnish 3.x
   - Memcached 1.4.x
   - XDebug
