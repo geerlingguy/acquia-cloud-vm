@@ -44,7 +44,7 @@ This VM uses Vagrant's built-in rsync-based folder syncing (which is currently o
 
 By default, this VM is set up so you can manage mysql databases on your own. The default root MySQL user credentials are `root` for username+password, but you could change the password via `config.yml`. I use the MySQL GUI [Sequel Pro](http://www.sequelpro.com/) (Mac-only) to connect and manage databases, then Drush to sync databases (sometimes I'll just do a dump and import, but Drush is usually quicker, and is easier to do over and over again when you need it).
 
-To connect using Sequel Pro (or a similar client):
+### Connect using Sequel Pro (or a similar client):
 
   1. Use the SSH connection type.
   2. Set the following options:
@@ -57,12 +57,10 @@ To connect using Sequel Pro (or a similar client):
 
 You should be able to connect as the root user and add, manage, and remove databases and users.
 
-## TODO
+### Connect using PHPMyAdmin (built-in):
 
-  - Add Solr (`geerlingguy.tomcat6` + `geerlingguy.solr`)
-  - Add XHProf (`geerlingguy.xhprof`)
-  - Add PHPMyAdmin (`geerlingguy.phpmyadmin`)
-  - Add other utilities and helpful tooling
+  1. Visit http://local.cloudvm.com/phpmyadmin (or substitute another vhost configured in `config.yml`).
+  2. If prompted for a login, log in using the MySQL root credentials (`root`/`root` by default, or whatever password you chose in `config.yml`).
 
 ## Author Information
 
