@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder synced_folder['local_path'], synced_folder['destination'],
       type: "rsync",
       rsync__auto: "true",
-      rsync__exclude: ".git/",
+      rsync__exclude: synced_folder['excluded_paths'],
       rsync__args: ["--verbose", "--archive", "--delete", "-z", "--chmod=ugo=rwX"],
       id: synced_folder['id']
   end

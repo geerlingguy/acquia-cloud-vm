@@ -8,6 +8,7 @@ vagrant_synced_folders:
   - {
     local_path: ~/Sites/drupal,
     destination: /drupal,
+    excluded_paths: [".git/"],
     id: drupal
   }
 
