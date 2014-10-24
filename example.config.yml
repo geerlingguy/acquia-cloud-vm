@@ -26,6 +26,7 @@ apache_vhosts:
     documentroot: "/drupal"
   }
 
+php_version: "5.3"
 php_memory_limit: "256M"
 
 # Disable main XDebug components unless needed.
