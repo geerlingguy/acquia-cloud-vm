@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
 
   # VirtualBox.
   config.vm.provider :virtualbox do |v|
-    v.customize ["modifyvm", :id, "--name", "local.cloudvm.com"]
+    v.customize ["modifyvm", :id, "--name", vconfig['vagrant_hostname']]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--memory", vconfig['vagrant_memory']]
     v.customize ["modifyvm", :id, "--cpus", vconfig['vagrant_cpus']]
