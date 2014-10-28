@@ -19,6 +19,9 @@ vagrant_cpus: 2
 # Other variables in this file will be used during Ansible provisioning.
 drush_version: "6.2.0"
 
+varnish_listen_port: 80
+varnish_storage: "malloc,256m"
+
 apache_listen_port: 8080
 apache_vhosts:
   - {
