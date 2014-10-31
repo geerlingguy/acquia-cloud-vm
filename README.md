@@ -62,6 +62,13 @@ You should be able to connect as the root user and add, manage, and remove datab
   1. Visit http://local.cloudvm.com/phpmyadmin (or substitute another vhost configured in `config.yml`).
   2. If prompted for a login, log in using the MySQL root credentials (`root`/`root` by default, or whatever password you chose in `config.yml`).
 
+## Using XHProf to Profile Code
+
+The easiest way to use XHProf to profile your PHP code on a Drupal site is to install the Devel module, then in Devel's configuration, check the 'Enable profiling of all page views and drush requests' checkbox. In the settings that appear below, set the following values:
+
+  - **xhprof directory**: `/usr/share/php`
+  - **XHProf URL**: `http://local.xhprof.com/` (assuming you have this set in `apache_vhosts` in config.yml)
+
 ## Author Information
 
 This VM was created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).

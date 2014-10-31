@@ -28,6 +28,10 @@ apache_vhosts:
     servername: "local.cloudvm.com",
     documentroot: "/drupal"
   }
+  - {
+    servername: "local.xhprof.com",
+    documentroot: "/usr/share/php/xhprof_html"
+  }
 
 php_version: "5.3"
 php_memory_limit: "256M"
