@@ -34,6 +34,12 @@
     - geerlingguy.drush
 
   tasks:
+    - name: Remove default Apache virtualhost file.
+      file: >
+        path=/etc/apache2/sites-enabled/000-default
+        state=absent
+      notify: restart webserver
+
     - name: Ensure networking tools are installed.
       apt: "name={{ item }} state=installed"
       with_items:
