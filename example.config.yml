@@ -5,12 +5,11 @@ vagrant_ip: 192.168.4.40
 
 # A list of synced folders, with the keys 'local_path', 'destination', and 'id'.
 vagrant_synced_folders:
-  - {
-    local_path: ~/Sites/drupal,
-    destination: /drupal,
-    excluded_paths: [".git/"],
+  - local_path: ~/Sites/drupal
+    destination: /drupal
+    excluded_paths: [".git/"]
     id: drupal
-  }
+    type: rsync
 
 # Memory and CPU to use for this VM.
 vagrant_memory: 1024

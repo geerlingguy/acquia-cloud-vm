@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   for synced_folder in vconfig['vagrant_synced_folders'];
     config.vm.synced_folder synced_folder['local_path'], synced_folder['destination'],
-      type: "rsync",
+      type: synced_folder['type'],
       rsync__auto: "true",
       rsync__exclude: synced_folder['excluded_paths'],
       rsync__args: ["--verbose", "--archive", "--delete", "-z", "--chmod=ugo=rwX"],
