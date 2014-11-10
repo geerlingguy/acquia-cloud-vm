@@ -24,14 +24,10 @@ varnish_storage: "malloc,256m"
 
 apache_listen_port: 8080
 apache_vhosts:
-  - {
-    servername: "local.cloudvm.com",
+  - servername: "local.cloudvm.com"
     documentroot: "/drupal"
-  }
-  - {
-    servername: "local.xhprof.com",
+  - servername: "local.xhprof.com"
     documentroot: "/usr/share/php/xhprof_html"
-  }
 
 php_version: "5.3"
 php_memory_limit: "256M"
@@ -41,3 +37,7 @@ php_xdebug_coverage_enable: 0
 php_xdebug_default_enable: 0
 
 mysql_root_password: root
+mysql_databases:
+  - name: cloudvm
+    encoding: utf8
+    collation: utf8_general_ci
