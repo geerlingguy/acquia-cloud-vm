@@ -2,6 +2,9 @@
 # vi: set ft=ruby :
 
 require 'yaml'
+if !File.exist?('./config.yml')
+  raise 'Configuration file not found! Please copy example.config.yml to config.yml and try again.'
+end
 vconfig = YAML::load_file("./config.yml")
 
 Vagrant.configure("2") do |config|
