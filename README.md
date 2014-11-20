@@ -36,9 +36,19 @@ Please see the available VM customization options inside `config.yml`. You can e
 
 Things like hosts file configuration (changing your local system's hosts file to point to this VM's IP address for development hostnames) are left to you to manage. My goal is to make this VM configuration extremely flexible and lightweight.
 
-## Syncing Files
+## Syncing folders
 
-This VM uses Vagrant's built-in rsync-based folder syncing (which is currently one-way), and pushes your files into the VM every time you do a `vagrant up` or `vagrant reload`. To initiate a one-time sync, use `vagrant rsync`, or to continuously monitor your local files for changes (and automatically sync them to the VM), use `vagrant rsync-auto`.
+You can share folders between your host computer and the VM in a variety of ways; the two most commonly-used methods are using an NFS share, or using Vagrant's rsync method to synchronize a folder from your host into the guest VM. The `example.config.yml` file contains an example `rsync` share that would sync the folder `~/Sites/drupal` on your host into a `/drupal` folder on the VM.
+
+If you want to use NFS for the share instead, you could simply change the share to:
+
+    vagrant_synced_folders:
+      - local_path: ~/Sites/drupal
+        destination: /drupal
+        id: drupal
+        type: nfs
+
+You can add as many synced folders as you'd like, and you can configure [any type of share](https://docs.vagrantup.com/v2/synced-folders/index.html) supported by Vagrant; just add another item to the list of `vagrant_synced_folders`.
 
 ## Connecting to MySQL
 
@@ -68,6 +78,8 @@ The easiest way to use XHProf to profile your PHP code on a Drupal site is to in
 
   - **xhprof directory**: `/usr/share/php`
   - **XHProf URL**: `http://local.xhprof.com/` (assuming you have this set in `apache_vhosts` in config.yml)
+
+If you're getting blank XHProf pages and errors like `Run #546e053e171fb: Invalid Run Id = 546e053e171fb`, you might need to manually create the `/tmp/xhprof` directory or run `vagrant provision` again.
 
 ## Author Information
 
