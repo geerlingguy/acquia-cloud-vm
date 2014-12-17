@@ -15,6 +15,7 @@ The following is included inside this VM:
   - Composer
   - Drush 6.x (7.x/etc. configurable)
   - Git 1.9.x (2.x/etc. configurable)
+  - MailHog
   - Command-line tools like `curl`, `iftop`, `traceroute`, `htop`, `strace`, `vim` and more.
 
 ## Usage

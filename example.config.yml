@@ -18,6 +18,15 @@ vagrant_cpus: 2
 # Other variables in this file will be used during Ansible provisioning.
 drush_version: "6.2.0"
 
+firewall_allowed_tcp_ports:
+  - "22"
+  - "25"
+  - "80"
+  - "443"
+  - "8025"
+  - "8080"
+  - "8443"
+
 varnish_listen_port: 80
 varnish_storage: "malloc,256m"
 
@@ -32,6 +41,7 @@ php_version: "5.3"
 php_memory_limit: "256M"
 php_display_errors: "On"
 php_realpath_cache_size: "1024K"
+php_sendmail_path: "/usr/sbin/ssmtp -t"
 
 # Disable main XDebug components unless needed.
 php_xdebug_coverage_enable: 0
