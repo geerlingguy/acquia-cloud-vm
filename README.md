@@ -82,6 +82,12 @@ The easiest way to use XHProf to profile your PHP code on a Drupal site is to in
 
 If you're getting blank XHProf pages and errors like `Run #546e053e171fb: Invalid Run Id = 546e053e171fb`, you might need to manually create the `/tmp/xhprof` directory or run `vagrant provision` again.
 
+## Catching/Debugging Email with MailHog
+
+By default, the VM is configured to redirect PHP's emails to MailHog (instead of sending them to the outside world). You can access the MailHog UI at `http://local.cloudvm.com:8025/` (where `local.cloudvm.com` is a domain you've configured for the VM).
+
+You can override the default behavior of redirecting email to MailHog by editing or removing the `php_sendmail_path` inside `config.yml`.
+
 ## Author Information
 
 This VM was created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
