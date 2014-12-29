@@ -10,6 +10,7 @@ vconfig = YAML::load_file("./config.yml")
 Vagrant.configure("2") do |config|
   config.vm.hostname = vconfig['vagrant_hostname']
   config.vm.network :private_network, ip: vconfig['vagrant_ip']
+  config.ssh.insert_key = false
 
   config.vm.box = "geerlingguy/ubuntu1204"
 
