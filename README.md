@@ -8,6 +8,7 @@ The following is included inside this VM:
   - Apache 2.2.22
   - MySQL 5.5.x
   - PHP 5.3.x (5.4.x/5.5.x configurable)
+  - Solr 3.6.2 (4.x configurable)
   - PHPMyAdmin 3.4.x
   - Varnish 3.x
   - Memcached 1.4.x
@@ -72,6 +73,12 @@ You should be able to connect as the root user and add, manage, and remove datab
 
   1. Visit http://local.cloudvm.com/phpmyadmin (or substitute another vhost configured in `config.yml`).
   2. If prompted for a login, log in using the MySQL root credentials (`root`/`root` by default, or whatever password you chose in `config.yml`).
+
+## Using the built-in Apache Solr server
+
+Apache Solr 3.6.2 is installed by default, and two example search cores (`core0` and `core1`) are created. You can access solr via http://local.cloudvm.com:8983/solr/, and in the Drupal Solr server configuration, connect with the URL http://local.cloudvm.com:8983/solr/core0/ (for `core0`). To get the core to work with Apache Solr Search Integration or Search API Solr, copy the module's solr configuration files into `/opt/solr/cores/core0/conf/`.
+
+Whenever you make changes to the Apache Solr configuration (adding/removing cores, changing config, etc.), you need to restart Tomcat so the changes will take effect: `sudo service tomcat6 restart`.
 
 ## Using XHProf to Profile Code
 

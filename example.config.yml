@@ -25,6 +25,7 @@ firewall_allowed_tcp_ports:
   - "443"
   - "8025"
   - "8080"
+  - "8983"
   - "8443"
 
 varnish_listen_port: 80
@@ -54,3 +55,5 @@ mysql_databases:
   - name: cloudvm
     encoding: utf8
     collation: utf8_general_ci
+
+solr_version: '3.6.2'

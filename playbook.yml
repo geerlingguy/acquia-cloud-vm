@@ -34,6 +34,8 @@
     - { role: geerlingguy.drush, tags: ['drush'] }
     - { role: geerlingguy.daemonize, tags: ['mail'] }
     - { role: geerlingguy.mailhog, tags: ['mail'] }
+    - { role: geerlingguy.tomcat6, tags: ['solr'] }
+    - { role: geerlingguy.solr, tags: ['solr'] }
 
   tasks:
     - name: Remove default Apache virtualhost file.

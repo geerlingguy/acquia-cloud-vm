@@ -15,3 +15,6 @@ geerlingguy.composer
 geerlingguy.drush
 geerlingguy.daemonize
 geerlingguy.mailhog
+geerlingguy.java
+geerlingguy.tomcat6
+geerlingguy.solr
