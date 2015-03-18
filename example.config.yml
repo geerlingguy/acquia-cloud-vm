@@ -4,6 +4,7 @@ vagrant_hostname: local.cloudvm.com
 vagrant_ip: 192.168.4.40
 
 # A list of synced folders, with the keys 'local_path', 'destination', and 'id'.
+# You can use NFS by switching the 'type' to 'nfs'.
 vagrant_synced_folders:
   - local_path: ~/Sites/drupal
     destination: /drupal
