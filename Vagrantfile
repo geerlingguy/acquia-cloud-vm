@@ -28,6 +28,16 @@ Vagrant.configure("2") do |config|
     ansible.sudo = true
   end
 
+  # VMware Fusion.
+  config.vm.provider :vmware_fusion do |v, override|
+    # HGFS kernel module currently doesn't load correctly for native shares.
+    override.vm.synced_folder ".", "/vagrant", type: 'nfs'
+
+    v.gui = false
+    v.vmx["memsize"] = vconfig['vagrant_memory']
+    v.vmx["numvcpus"] = vconfig['vagrant_cpus']
+  end
+
   # VirtualBox.
   config.vm.provider :virtualbox do |v|
     v.name = vconfig['vagrant_hostname']
