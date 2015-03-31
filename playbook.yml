@@ -39,10 +39,13 @@
 
   tasks:
     - name: Remove default Apache virtualhost file.
-      file: >
-        path=/etc/apache2/sites-enabled/000-default
-        state=absent
+      file:
+        path: "{{ item }}"
+        state: absent
       notify: restart webserver
+      with_items:
+        - /etc/apache2/sites-enabled/000-default
+        - /etc/apache2/sites-enabled/000-default.conf
 
     - name: Ensure networking tools are installed.
       apt: "name={{ item }} state=installed"
