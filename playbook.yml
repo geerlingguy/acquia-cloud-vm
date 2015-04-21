@@ -65,6 +65,11 @@
         - lsof
         - strace
 
+    - name: Ensure other helpful software is installed.
+      apt: "name={{ item }} state=installed"
+      with_items:
+        - imagemagick
+
     - name: Ensure development tools are installed.
       apt: "name={{ item }} state=installed"
       with_items:
