@@ -23,11 +23,10 @@ firewall_allowed_tcp_ports:
   - "22"
   - "25"
   - "80"
+  - "81"
   - "443"
   - "8025"
-  - "8080"
   - "8983"
-  - "8443"
 
 varnish_listen_port: 80
 varnish_storage: "malloc,256m"
