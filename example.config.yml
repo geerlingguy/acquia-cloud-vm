@@ -2,6 +2,7 @@
 # Vagrant hostname and IP configuration.
 vagrant_hostname: local.cloudvm.com
 vagrant_ip: 192.168.4.40
+vagrant_box: geerlingguy/ubuntu1204
 
 # A list of synced folders, with the keys 'local_path', 'destination', and 'id'.
 # You can use NFS by switching the 'type' to 'nfs'.
