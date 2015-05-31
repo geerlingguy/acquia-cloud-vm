@@ -7,7 +7,7 @@ The following is included inside this VM:
   - Ubuntu 12.04 (Precise)
   - Apache 2.2.22
   - MySQL 5.5.x
-  - PHP 5.3.x (5.4.x/5.5.x configurable)
+  - PHP 5.3.x (5.4.x/5.5.x/5.6.x configurable)
   - Solr 3.6.2 (4.x configurable)
   - PHPMyAdmin 3.4.x
   - Varnish 3.x
