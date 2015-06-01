@@ -47,6 +47,26 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--ioapic", "on"]
   end
 
+  # Vagrant host manager.
+  if Vagrant.has_plugin?('vagrant-hostmanager')
+
+    aliases = Array.new()
+    vconfig['apache_vhosts'].each do |vhost|
+      aliases.push(vhost['servername'])
+    end
+
+    aliases.delete_if { |x| x == vconfig['vagrant_hostname'] }
+
+    if aliases.any?
+      config.hostmanager.enabled = true
+      config.hostmanager.manage_host = true
+      config.hostmanager.ignore_private_ip = false
+      config.hostmanager.include_offline = true
+      config.hostmanager.aliases = aliases
+    end
+
+  end
+
   # Set the name of the VM. See: http://stackoverflow.com/a/17864388/100134
   config.vm.define :cloudvm do |cloudvm_config|
   end
